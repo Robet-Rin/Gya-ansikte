@@ -18,6 +18,7 @@ middle_y = h/2
 
 def camera_loop():
     global face_x, face_y, deadzone
+    
     while True:
         ret, frame = cap.read()
 
@@ -34,7 +35,7 @@ def camera_loop():
             face_x = bbox.origin_x + bbox.width // 2
             face_y = bbox.origin_y + bbox.height // 2
         
-            print(f"Ansikte hittat!,  {face_x},{face_y}")
+            #print(f"Ansikte hittat!,  {face_x},{face_y}")
         
             Hpoint_x = bbox.origin_x + bbox.width
             Hpoint_y = bbox.origin_y + bbox.height
@@ -42,8 +43,9 @@ def camera_loop():
 
             cv.rectangle(frame, (bbox.origin_x, bbox.origin_y), (Hpoint_x, Hpoint_y), (255, 25, 103), 2 )
             cv.circle(frame, (face_x,face_y), (deadzone), (0, 25, 103), 2)
-        else:
-            print("Inget ansikte")
+        #else:
+            #print("Inget ansikte")
+
 
         cv.imshow("frame", frame) #dehär är vad som visar skiten type shiii
 

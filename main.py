@@ -1,4 +1,6 @@
-from camera import *
-from servologic import *
+import threading
+import camera
+import servologic
 
-#runall typ osv osäker om denna ens behövs
+threading.Thread(target=servologic.servo_loop, daemon=True).start()
+camera.camera_loop()
