@@ -54,3 +54,5 @@ def camera_loop():
 
     cap.release() #när den stängs av så släpps den och kan användas vidare
     cv.destroyAllWindows() #dödar allt osv, osv, etc
+
+camera_loop()
