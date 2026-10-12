@@ -43,6 +43,7 @@ def camera_loop():
 
             cv.rectangle(frame, (bbox.origin_x, bbox.origin_y), (Hpoint_x, Hpoint_y), (255, 25, 103), 2 )
             cv.circle(frame, (face_x,face_y), (deadzone), (0, 25, 103), 2)
+            cv.circle(frame, (middle_x, middle_y), (1), (0, 255, 0), 1)
         #else:
             #print("Inget ansikte")
 
