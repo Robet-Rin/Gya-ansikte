@@ -13,8 +13,8 @@ face_detek = vision.FaceDetector.create_from_options(options) #självaste detekt
 w = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
 h = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
 print(f"Camera feed: {w}x{h}")
-middle_x = w/2
-middle_y = h/2
+middle_x = w//2
+middle_y = h//2
 
 def camera_loop():
     global face_x, face_y, deadzone
@@ -43,7 +43,7 @@ def camera_loop():
 
             cv.rectangle(frame, (bbox.origin_x, bbox.origin_y), (Hpoint_x, Hpoint_y), (255, 25, 103), 2 )
             cv.circle(frame, (face_x,face_y), (deadzone), (0, 25, 103), 2)
-            cv.circle(frame, (middle_x, middle_y), (1), (0, 255, 0), 1)
+            cv.circle(frame, (middle_x, middle_y), (1), (0, 255, 0), 2)
         #else:
             #print("Inget ansikte")
 
