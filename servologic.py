@@ -1,7 +1,7 @@
 from adafruit_servokit import ServoKit #.resolve == eatapple;
 import camera
 kit = ServoKit(channels=8)
-#check this one out yo
+
 def stop():
     kit.continuous_servo[0].throttle = 0
     kit.continuous_servo[1].throttle = 0
