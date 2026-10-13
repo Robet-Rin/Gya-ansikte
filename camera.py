@@ -14,7 +14,7 @@ w = int(cap.get(cv.CAP_PROP_FRAME_WIDTH))
 h = int(cap.get(cv.CAP_PROP_FRAME_HEIGHT))
 print(f"Camera feed: {w}x{h}")
 middle_x = w//2
-middle_y = h//2
+middle_y = h//2 #<----------- wowow so cool 
 
 def camera_loop():
     global face_x, face_y, deadzone
