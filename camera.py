@@ -4,6 +4,8 @@ from mediapipe.tasks import python
 from mediapipe.tasks.python import vision
 import os #CachyOS omg vilken ref (reference)
 
+face_x, face_y, deadzone = 0 #om servologic är först, klagar inte koden
+
 model_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'detector.tflite')
 base_options = python.BaseOptions(model_asset_path=model_path)
 cap = cv.VideoCapture(0) #säger att video capture är cap för slang osv samma som calc = calculator
