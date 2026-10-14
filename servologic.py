@@ -1,5 +1,7 @@
 from adafruit_servokit import ServoKit #.resolve == eatapple;
 import camera
+import time
+
 kit = ServoKit(channels=8)
 
 def stop():
@@ -28,5 +30,6 @@ def servo_loop():
 
             #print("X Speed", xspeedfactor)
             #print("Y Speed", yspeedfactor)
+            time.sleep(0.02)
     finally:
         stop()
