@@ -3,10 +3,11 @@ import camera
 import time
 
 kit = ServoKit(channels=8)
+x, y = kit.continuous_servo[0], kit.continuous_servo[1]
 
 def stop():
-    kit.continuous_servo[0].throttle = 0
-    kit.continuous_servo[1].throttle = 0
+    x.throttle = 0 #x-led
+    y.throttle = 0 #y-led
 
 def servo_loop():
     try:
@@ -19,14 +20,14 @@ def servo_loop():
             yspeedfactor = 2*(delta_y/camera.h)
 
             if abs(delta_x) > camera.deadzone:
-                kit.continuous_servo[0].throttle = max(min(xspeedfactor, -1), 1)
+                x.throttle = max(min(xspeedfactor, -1), 1)
             else:
-                kit.continuous_servo[0].throttle = 0
+                x.throttle = 0
 
             if abs(delta_y) > camera.deadzone:
-                kit.continuous_servo[1].throttle = max(min(yspeedfactor, -1), 1)
+                y.throttle = max(min(yspeedfactor, -1), 1)
             else:
-                kit.continuous_servo[1].throttle = 0
+                y.throttle = 0
 
             #print("X Speed", xspeedfactor)
             #print("Y Speed", yspeedfactor)
