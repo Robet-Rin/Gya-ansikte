@@ -19,12 +19,12 @@ def servo_loop():
             yspeedfactor = 2*(delta_y/camera.h)
 
             if abs(delta_x) > camera.deadzone:
-                kit.continuous_servo[0].throttle = xspeedfactor
+                kit.continuous_servo[0].throttle = max(min(xspeedfactor, -1), 1)
             else:
                 kit.continuous_servo[0].throttle = 0
 
             if abs(delta_y) > camera.deadzone:
-                kit.continuous_servo[1].throttle = yspeedfactor
+                kit.continuous_servo[1].throttle = max(min(yspeedfactor, -1), 1)
             else:
                 kit.continuous_servo[1].throttle = 0
 
