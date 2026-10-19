@@ -9,7 +9,7 @@ def stop():
     x.throttle = 0 #x-led
     y.throttle = 0 #y-led
 
-def servo_loop():
+def servo_active():
     try:
 
         while True:
@@ -34,3 +34,13 @@ def servo_loop():
             time.sleep(0.02)
     finally:
         stop()
+
+def servo_passive():
+    try:
+        while True:
+            x.throttle = 0.5
+            time.sleep(2.5)
+            x.throttle = -0.5
+            time.sleep(2.5)
+    finally:
+        stop() 
