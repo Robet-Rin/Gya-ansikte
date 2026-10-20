@@ -40,7 +40,11 @@ def servo_passive():
         while True:
             x.throttle = 0.5
             time.sleep(2.5)
+            x.throttle = 0
+            time.sleep(1)
             x.throttle = -0.5
             time.sleep(2.5)
+            x.throttle = 0
+            time.sleep(1)
     finally:
         stop() 
