@@ -41,7 +41,7 @@ def camera_loop():
         
             Hpoint_x = bbox.origin_x + bbox.width
             Hpoint_y = bbox.origin_y + bbox.height
-            deadzone = int(int(bbox.width) / 10) # 5 är arbiträrt
+            deadzone = int(int(bbox.width) / 10) # talet är arbiträrt
 
             cv.rectangle(frame, (bbox.origin_x, bbox.origin_y), (Hpoint_x, Hpoint_y), (255, 25, 103), 2 )
             cv.circle(frame, (face_x,face_y), (deadzone), (0, 25, 103), 2)
